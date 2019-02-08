@@ -1,4 +1,4 @@
-package com.bonobono.web03.contoller;
+package com.bonobono.web03.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,35 +8,39 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bonobono.web03.service.SampleService;
-
+import com.bonobono.web03.vo.Sample;
 
 @Controller
 public class SampleController {
-	@Autowired private SampleService sampleService;
-	// 1. 입력폼
-	@GetMapping("/addSample")  //get방식
+	@Autowired		// 객체 생성
+	private SampleService sampleService;
+	
+	// 1. 입력 폼
+	@GetMapping("/addSample")	// Get방식
 	public String addSample() {
-		return "addSample"; //view 이름은 templeat 폴더에 addSqmple.html
 		
+		// 자동으로 view 파일로 forward
+		return "addSample";		// view 이름은 tampleate폴더(생략)의 addSample.html
 	}
+	
 	// 2. 입력 액션
-	@PostMapping  //포스트 방식 
-	public String addSample(
-			@RequestParam(value="sampleName")String sampleName) {
-			// Request.getParameter("sampleName")
-		return "redirect:/sampleList";
+	@PostMapping	// Post방식
+	public String addSample(@RequestParam(value="") String sampleName) {
+							// request.getParameter("sampleName")
 		
+		// redirect가 앞에 붙을경우 request.sendRedirect
+		return "redirect:/sampleList";
 	}
+	
 	// 3. 목록
 	@GetMapping("/sampleList")
 	public String sampleList(Model model) {
 		return "sampleList";
 	}
 	
-	// 4. 삭제 액션
+	// 4. 삭제
 	
 	// 5. 수정 폼
 	
 	// 6. 수정 액션
-
 }

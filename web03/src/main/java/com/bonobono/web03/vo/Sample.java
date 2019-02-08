@@ -1,9 +1,11 @@
 package com.bonobono.web03.vo;
 
-public class sample {
-	private int sampleId; // sample테이블 sample_id컬럼
-	private String sampleName; // sample_name
-	
+
+// lombok을 사용할 경우 @getter @setter
+// vo는 싱글톤 방식이 더 나음
+public class Sample {
+	private int sampleId;		// sample 테이블의 sample_id 컬럼과 동일
+	private String sampleName;	// sample 테이블의 sample_name 컬럼과 동일
 	
 	public int getSampleId() {
 		return sampleId;
@@ -17,10 +19,8 @@ public class sample {
 	public void setSampleName(String sampleName) {
 		this.sampleName = sampleName;
 	}
-	
 	@Override
 	public String toString() {
-		return "sample [sampleId=" + sampleId + ", sampleName=" + sampleName + "]";
+		return "Sample [sampleId=" + sampleId + ", sampleName=" + sampleName + "]";
 	}
-
 }
