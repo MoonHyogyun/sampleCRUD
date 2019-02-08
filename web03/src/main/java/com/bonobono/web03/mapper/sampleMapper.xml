@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bonobono.web03.mapper.sampleMapper">
+
+	<!-- 테이블내에 리스트를 조회 하는 쿼리 -->
+	<select id="sampleList"
+			resultType="com.bonobono.web03.vo.sample">
+			
+	</select>
+	
+	<!-- 테이블내에 하나의 행을 조회 하는 쿼리 -->
+		<select id="selectSampleOne"
+			resultType="com.bonobono.web03.vo.sample">
+			
+	</select>
+	
+	<!-- 테이블내에 값을 입력하는 쿼리 -->
+		<insert id="insertSample"
+			parameterType="com.bonobono.web03.vo.sample">
+			INSERT INTO sample(
+				sample_name
+			) VALUES (
+				#{sampleName}
+			)
+	</insert>
+	
+	<!-- 테이블에 한행을 삭제하는 쿼리  -->
+	<delete id="deleteSample"
+			parameterType="com.bonobono.web03.vo.sample">
+			
+	</delete>
+	
+	<update id="updateSample"
+			parameterType="com.bonobono.web03.vo.sample">
+			
+	</update>
+			
+</mapper>
