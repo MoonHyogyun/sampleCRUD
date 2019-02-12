@@ -10,4 +10,6 @@ import com.bonobono.web03.vo.Sample;
 public interface SampleMapper {
 
 	List<Sample> selectSampleList();
+	
+	int insertSmaple(Sample sample);
 }
