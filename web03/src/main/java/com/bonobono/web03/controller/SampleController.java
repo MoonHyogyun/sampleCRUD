@@ -8,23 +8,22 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bonobono.web03.service.SampleService;
-import com.bonobono.web03.vo.Sample;
 
 @Controller
 public class SampleController {
 	@Autowired		// 객체 생성
 	private SampleService sampleService;
 	
-	// 1. 입력 폼
-	@GetMapping("/addSample")	// Get방식
+	// 1. 입력 폼 // Get방식
+	@GetMapping("/addSample")
 	public String addSample() {
 		
 		// 자동으로 view 파일로 forward
 		return "addSample";		// view 이름은 tampleate폴더(생략)의 addSample.html
 	}
 	
-	// 2. 입력 액션
-	@PostMapping	// Post방식
+	// 2. 입력 액션 // Post방식
+	@PostMapping 
 	public String addSample(@RequestParam(value="") String sampleName) {
 							// request.getParameter("sampleName")
 		
@@ -35,6 +34,8 @@ public class SampleController {
 	// 3. 목록
 	@GetMapping("/sampleList")
 	public String sampleList(Model model) {
+		// list라는 이름으로 view에 forward
+		model.addAttribute("list", sampleService.getSampleList());
 		return "sampleList";
 	}
 	

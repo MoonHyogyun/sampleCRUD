@@ -17,7 +17,8 @@ public class SampleService {
 	
 	// 전체 리스트 출력하는 메서드
 	public List<Sample> getSampleList() {
-		return null;
+		List<Sample> list = sampleMapper.selectSampleList();
+		return list;
 	}
 	
 	// 하나의 리스트를 출력하는 메서드
