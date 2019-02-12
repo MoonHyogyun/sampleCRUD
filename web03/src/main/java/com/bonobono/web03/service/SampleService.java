@@ -33,8 +33,9 @@ public class SampleService {
 	}
 	
 	// 하나의 값을 삭제하는 메서드
-	public int removeSample(Sample sample) {
-		return 0;
+	public int removeSample(int sampleId) {
+		int result = sampleMapper.deleteSample(sampleId);
+		return result;
 	}
 	
 	// 하나의 값을 수정하는 메서드

@@ -40,7 +40,13 @@ public class SampleController {
 	}
 	
 	// 4. 삭제
-	
+	@GetMapping("/removeSample")
+	public String removeSample(@RequestParam(value="") int sampleId) {
+		int result = sampleService.removeSample(sampleId);
+		
+		return "redirect:/sampleList";
+		
+	}
 	// 5. 수정 폼
 	
 	// 6. 수정 액션
