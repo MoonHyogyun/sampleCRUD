@@ -26,7 +26,7 @@ public class SampleController {
 	@PostMapping 
 	public String addSample(@RequestParam(value="") String sampleName) {
 							// request.getParameter("sampleName")
-		
+		int result = sampleService.addSample(sampleName);
 		// redirect가 앞에 붙을경우 request.sendRedirect
 		return "redirect:/sampleList";
 	}

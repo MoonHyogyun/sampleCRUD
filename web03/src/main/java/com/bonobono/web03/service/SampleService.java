@@ -27,8 +27,8 @@ public class SampleService {
 	}
 	
 	// 테이블에 값을 입력하는 메서드
-	public int addSample(Sample sample) {
-		int result = sampleMapper.insertSmaple(sample);
+	public int addSample(String sampleName) {
+		int result = sampleMapper.insertSample(sampleName);
 		return result;
 	}
 	
